@@ -1,23 +1,23 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
 
-function App() {
+import BookCreate from './components/BookCreate';
+
+const App = () => {
+  const [books, setBooks] = useState([]);
+
+  // Create a Book handler
+  const createBook = (title) => {
+    const updatedBooks = [...books,
+    { id: Math.round(Math.random() * 999) },
+      title
+    ];
+    setBooks(updatedBooks);
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BookCreate onCreate={ createBook } />
     </div>
   );
 }
