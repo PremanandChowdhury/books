@@ -13,7 +13,7 @@ const BookEdit = ({book, onSubmit}) => {
   }
 
   return (
-    <form className='form-edit' onSubmit={handleSubmit}>
+    <form className='book-edit' onSubmit={handleSubmit}>
       <label>Title</label>
       <input type="text" className='input' value={title} onChange={handleChange} />
       <button className='button is-primary'>
