@@ -1,12 +1,12 @@
 {
   "books": [
     {
-      "title": "Physhology of money",
+      "title": "Psychology of money",
       "id": 2
     },
     {
-      "title": "Book of strayberry",
-      "id": 4
+      "title": "New Book",
+      "id": 3
     }
   ]
 }
