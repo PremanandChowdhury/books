@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useCallback } from "react";
 import axios from "axios";
 
 const BooksContext = createContext()
@@ -7,10 +7,10 @@ function Provider({ children }) {
   const [books, setBooks] = useState([]);
 
   // Fetching all the books on initial render
-  const fetchBooks = async () => {
+  const fetchBooks = useCallback(async () => {
     const res = await axios.get('http://localhost:3001/books')
     setBooks(res.data);
-  }
+  }, []);
 
   // Create a Book handler
   const createBook = async (title) => {
